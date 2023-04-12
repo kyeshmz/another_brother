@@ -21,6 +21,7 @@
 #import "Method/GetBluetoothPrintersMethodCall.h"
 #import "Method/StartCommunicationMethodCall.h"
 #import "Method/EndCommunicationMethodCall.h"
+#import "Method/GetPdfFilePagesMethodCall.h"
 
 /*
 @implementation AnotherBrotherPlugin
@@ -80,6 +81,9 @@
   }
   else if ([[EndCommunicationMethodCall METHOD_NAME] isEqualToString:call.method]) {
       [[[EndCommunicationMethodCall alloc] initWithCall:call result:result] execute];
+  }
+   else if ([[GetPdfFilePagesMethodCall METHOD_NAME] isEqualToString:call.method]) {
+        [[[GetPdfFilePagesMethodCall alloc] initWithCall:call result:result] execute];
   }
   else {
       result(FlutterMethodNotImplemented);
